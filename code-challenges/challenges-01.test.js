@@ -126,7 +126,14 @@ const addValues = (arr, value) => {
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-  return [8, 8, 8, 8, 8]
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  return arr;
+
+
+
+  // return [8, 8, 8, 8, 8]
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -149,7 +156,26 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
-  return ["apples", "pears", "bananas"]
+
+  let resultsArray = [];
+
+  // for (let i = 0; i < availableItems.length; i++) {
+  //   if (availableItems[i].available == true) {
+  //     resultsArray.push(availableItems[i].name)
+  //   }
+  // }
+  availableItems.forEach(function (item) {
+    if (item.available == true) {
+      resultsArray.push(item.name);
+    }
+  })
+
+
+  return resultsArray;
+
+  // availableItems.forEach()
+
+  // return ["apples", "pears", "bananas"]
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -168,6 +194,23 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+  const resultsArray7 = [];
+
+  arr.forEach(function (item) {
+    if ((item % 3) == 0 && (item % 5) == 0) {
+      resultsArray7.push('Fizz Buzz');
+    } else if ((item % 3) == 0) {
+      resultsArray7.push('Fizz');
+    } else if ((item % 5) == 0) {
+      resultsArray7.push('Buzz');
+    } else {
+      resultsArray7.push(item);
+    }
+  })
+
+  return resultsArray7;
+
+  // return [1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'Fizz Buzz', 16];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -205,14 +248,14 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   const inventory = [{ name: 'apples', available: true }, { name: 'pears', available: true }, { name: 'oranges', available: false }, { name: 'bananas', available: true }, { name: 'blueberries', available: false }];
 
   test('It should only add the available items to the list', () => {
@@ -221,7 +264,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
