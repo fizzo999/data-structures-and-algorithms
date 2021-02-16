@@ -90,6 +90,8 @@ const speaker = (words, callback) => {
 
   words.forEach(function (wordsItem) {
 
+    // greeting(wordsItem); becomes callback(wordsItem);
+
     results4b.push(callback(wordsItem));
 
   })
@@ -117,6 +119,9 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+
+  arr.push(value);
+
 };
 
 const addNumbers = (num, arr, times, callback) => {
