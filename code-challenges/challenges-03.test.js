@@ -25,6 +25,7 @@ const updateAnimal = (arr, callback) => {
   // Solution code here...
   const resultsArray1 = [];
   arr.forEach(function (inhabitant) {
+
     resultsArray1.push(callback(inhabitant));
     // console.log(resultsArray1);
   })
@@ -99,6 +100,7 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 const alphabetize = (arr) => {
   // Solution code here...
   return arr.sort();
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -168,7 +170,7 @@ const sortByLength = (arr) => {
       return 0;
     }
   });
-  return arr
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -285,6 +287,43 @@ const meetings = [
 
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+  arr.forEach(function (item) {
+    item.dayOfTheWeekNumber = 0;
+  });
+  var weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < weekday.length; j++) {
+      if (arr[i].dayOfWeek === weekday[j]) {
+        arr[i].dayOfTheWeekNumber = j
+      }
+    }
+  }
+  arr.sort(function (left, right) {
+    if (left.dayOfTheWeekNumber > right.dayOfTheWeekNumber) {
+      return 1;
+    } else if (left.dayOfTheWeekNumber < right.dayOfTheWeekNumber) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  arr.forEach(function (item) {
+    delete item.dayOfTheWeekNumber;
+  })
+  console.log(arr);
+  return arr
+
+
+
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -299,26 +338,51 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 
 const sortSchedule = (arr) => {
   // Solution code here...
-  const resultsArray13 = []
-  resultsArray13.push(arr.sort(function (left, right) {
-    if (left.start > right.start) {
-      return 1;
-    } else if (left.start < right.start) {
-      return -1;
-    } else {
-      if ((parseInt(left.end) - parseInt(left.start)) > (parseInt(right.end) - parseInt(right.start))) {
-        return 1;
-      } else if ((parseInt(left.end) - parseInt(left.start)) < (parseInt(right.end) - parseInt(right.start))) {
-        return -1;
-      } else {
-        return 0;
+  arr.forEach(function (item) {
+    item.dayOfTheWeekNumber = 0;
+  });
+  var weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < weekday.length; j++) {
+      if (arr[i].dayOfWeek === weekday[j]) {
+        arr[i].dayOfTheWeekNumber = j
       }
     }
+  }
+  arr.sort(function (left, right) {
+    if (left.dayOfTheWeekNumber > right.dayOfTheWeekNumber) {
+      return 1;
+    } else if (left.dayOfTheWeekNumber < right.dayOfTheWeekNumber) {
+      return -1;
+    } else {
+      if (left.start > right.start) {
+        return 1;
+      } else if (left.start < right.start) {
+        return -1;
+      } else {
+        if ((parseInt(left.end) - parseInt(left.start)) > (parseInt(right.end) - parseInt(right.start))) {
+          return 1;
+        } else if ((parseInt(left.end) - parseInt(left.start)) < (parseInt(right.end) - parseInt(right.start))) {
+          return -1;
+        } else {
+          return 0;
+        }
+      }
+    }
+  });
 
+  arr.forEach(function (item) {
+    delete item.dayOfTheWeekNumber;
   })
-  )
-  console.log(resultsArray13)
-  return resultsArray13;
+  console.log(arr);
+  return arr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -453,7 +517,7 @@ describe('Testing challenge 11', () => {
   });
 });
 
-xdescribe('Testing challenge 12', () => {
+describe('Testing challenge 12', () => {
   test('It should sort meetings by the day on which they happen', () => {
     const sortedMeetings = sortMeetingsByDay(meetings);
     expect(sortedMeetings.slice(0, 2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
@@ -463,7 +527,7 @@ xdescribe('Testing challenge 12', () => {
   });
 });
 
-xdescribe('Testing challenge 13', () => {
+describe('Testing challenge 13', () => {
   test('It should sort meetings by when they happen', () => {
     expect(sortSchedule(meetings)).toStrictEqual([
       new Meeting('Monday', '0900', '0945'),
