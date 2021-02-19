@@ -5,40 +5,16 @@ CHALLENGE 1 - Review
 
 Write a function called addTwo that takes in an array and adds two to every value using a for loop. Place the new value in a new array. Return the new array. 
 
-
-
-
-
-
-
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
   // Solution code here...
   const resultsArray1 = [];
-
   arr.forEach(function (arrayItem) {
-    reultsArray1.push(arrayItem + 2);
+    resultsArray1.push(arrayItem + 2);
   })
-
-  return reultsArray1;
+  return resultsArray1;
 }
-
-// const addTwo = (arr) => {
-//   // Solution code here...
-//   const resultsArray1 = [];
-
-//   arr.forEach( function (arrayItem) {
-//     reultsArray1.push(arrayItem + 2);
-//   })
-
-//   return reultsArray1;
-// } try some more
-
-
-
-
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -47,9 +23,13 @@ Write a function named containsW that takes in a string. This function should us
 
 ------------------------------------------------------------------------------------------------ */
 
-const containsW = (str) => {
-  // Solution code here...
-};
+const containsW = str => (/w/gm).test(str);
+
+// Solution code here...
+// const testRegEx = /w/gm;
+// return testRegEx.test(str);
+// return (/w/gm).test(str);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -63,9 +43,12 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
-const isNum = (input) => {
-  // Solution code here...
-};
+const isNum = input => (/\d/gm).test(input);
+// Solution code here...
+// const testRegEx = /\d/gm;
+// return testRegEx.test(input);
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -74,9 +57,11 @@ Write a function named containsWorld that takes in a string or number of any len
 
 ------------------------------------------------------------------------------------------------ */
 
-const containsWorld = (input) => {
-  // Solution code here...
-};
+const containsWorld = input => (/world/gm).test(input);
+// Solution code here...
+// const testRegEx = /world/gm;
+// return testRegEx.test(input);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -86,9 +71,11 @@ Write a function named isCapitalized that takes in a string. This function shoul
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
-const isCapitalized = (str) => {
-  // Solution code here...
-};
+const isCapitalized = str => str.match(/\b[A-Z]\w*\b/g) || [];
+// Solution code here...
+// const testRegEx = /\b[A-Z]\w*\b/g;
+// return str.match(testRegEx) || [];
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -98,6 +85,16 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  const resultsArray6 = [];
+  const testRegEx = /^[A-J]/;
+
+  arr.forEach(function (item) {
+    if (testRegEx.test(item)) {
+      resultsArray6.push(item)
+    }
+  })
+  console.log(resultsArray6);
+  return resultsArray6;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,6 +111,22 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  const testRegEx1 = /^(Oct)$/gm;
+  const testRegEx2 = /^(oct)$/gm;
+  const testRegEx3 = /^(October)$/gm;
+  const testRegEx4 = /^(october)$/gm;
+  // const testRegEx2 = /\b(October|Oct|october|oct)\b/gm;
+  if (testRegEx1.test(input)) {
+    return true;
+  } else if (testRegEx2.test(input)) {
+    return true;
+  } else if (testRegEx3.test(input)) {
+    return true;
+  } else if (testRegEx4.test(input)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -178,7 +191,7 @@ describe('Testing challenge 1', () => {
   })
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return true if the input contains a lower case w', () => {
     expect(containsW('hello world')).toBe(true);
   });
@@ -190,7 +203,7 @@ xdescribe('Testing challenge 2', () => {
   })
 })
 
-xxdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return true if the input is a number', () => {
     expect(isNum(1234567890)).toBeTruthy();
     expect(isNum('12345')).toBeTruthy();
@@ -204,7 +217,7 @@ xxdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return true if the input contains the word school in lower case', () => {
     expect(containsWorld('hello world')).toBe(true);
   });
@@ -216,7 +229,7 @@ xdescribe('Testing challenge 4', () => {
   });
 })
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should only return words that begin with a capital letter', () => {
     const capitalResult = isCapitalized('We only want to Return the Words that begin With a capital Letter');
 
@@ -229,7 +242,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
@@ -245,7 +258,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should match any of the acceptable inputs', () => {
     expect(matchMonth('Oct')).toBeTruthy();
     expect(matchMonth('oct')).toBeTruthy();
