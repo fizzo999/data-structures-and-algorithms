@@ -60,8 +60,17 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 const addPurchases = (arr) => {
   // Solution code here...
+  const resultsArray3 = arr.reduce(totalAmountPurchased, 0);
+  return resultsArray3;
 };
 
+function totalAmountPurchased(amountCounter, transactionObject) {
+  if (transactionObject.purchasePrice) {
+    return amountCounter + transactionObject.purchasePrice;
+  } else {
+    return amountCounter;
+  }
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -72,6 +81,17 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
+  const resultsArray4 = arr.reduce(countingElements, 0);
+  return resultsArray4;
+};
+
+function countingElements(elementCounter, arrElement) {
+  if (arrElement) {
+    elementCounter++;
+  } else {
+    elementCounter;
+  }
+  return elementCounter;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -133,8 +153,17 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  const resultsArray5 = arr.reduce(countingMovieHeroes, []);
+  return resultsArray5;
 };
 
+function countingMovieHeroes(movieCharacterCounter, CharacterObject) {
+  if (CharacterObject) {
+    return movieCharacterCounter + CharacterObject.name
+  } else {
+    return movieCharacterCounter;
+  }
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -145,6 +174,11 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  const resultsArray6a = str.split('');
+  const resultsArray6b = resultsArray6a.reduce((newString, currentLetter) => {
+    return newString + currentLetter;
+  }, []);
+  return resultsArray6b.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -198,6 +232,16 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  const resultsArray7 = arr.reduce(reduceToChildCount, 0);
+  return resultsArray7;
+};
+
+function reduceToChildCount(childCounter, personObj) {
+  if (personObj.children) {
+    return childCounter + personObj.children.length;
+  } else {
+    return childCounter;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -316,14 +360,14 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should add the purchase price', () => {
     expect(addPurchases([{ item: 'switch', purchasePrice: 399 }, { item: 'toothpaste', purchasePrice: 2 }])).toStrictEqual(401);
     expect(addPurchases([])).toStrictEqual(0);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return the length of the array', () => {
     expect(countNumberOfElements([1, 2, 3, 4, 5])).toStrictEqual(5);
   });
@@ -342,7 +386,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
