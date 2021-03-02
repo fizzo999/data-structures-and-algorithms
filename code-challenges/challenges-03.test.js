@@ -27,7 +27,7 @@ const updateAnimal = (arr, callback) => {
   arr.forEach(function (inhabitant) {
 
     resultsArray1.push(callback(inhabitant));
-    // console.log(resultsArray1);
+
   })
   // note to SELF - careful where you place the return !!!
   return resultsArray1;
@@ -317,13 +317,7 @@ const sortMeetingsByDay = (arr) => {
   arr.forEach(function (item) {
     delete item.dayOfTheWeekNumber;
   })
-  console.log(arr);
   return arr
-
-
-
-
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -381,7 +375,6 @@ const sortSchedule = (arr) => {
   arr.forEach(function (item) {
     delete item.dayOfTheWeekNumber;
   })
-  console.log(arr);
   return arr
 };
 

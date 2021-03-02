@@ -9,17 +9,15 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  // Solution code here...
   const results = [];
-  arr.forEach(function (number) {
-    results.push(number + 1);
-  });
-
+  arr.forEach(number => results.push(number + 1));
+  // arr.forEach(function (number) {
+  //   results.push(number + 1);
+  // });
   return results;
-
-  // return [2, 3, 4, 5, 6]
 };
 
+// return [2, 3, 4, 5, 6]
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 

@@ -23,7 +23,9 @@ Becomes:
 
 function transformToLis(obj) {
   // Solution code here...
-  const resultsObject1 = {};
+  const resultsObject1 = [];
+
+  
 
   return resultsObject1;
 }
