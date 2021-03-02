@@ -218,8 +218,17 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
-};
+  data.sort(function (left, right) {
+    if (parseInt(left.height) > parseInt(right.height)) {
+      return 1;
+    } else if (parseInt(left.height) < parseInt(right.height)) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  return data[0].name;
+}
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -280,7 +289,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the name of the shortest character', () => {
     expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
   });

@@ -31,10 +31,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 const appendTheEnd = (str) => {
   // Solution code here...
   let results2 = str + ' The end.';
-  // let results2 = '';
-  // results2 += str + ' The end.';
   return results2;
-  // return ('This is my story. The end.');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,7 +85,8 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-  people.forEach(function (individual) { individual.isAuthor = true })
+  people.forEach(function (individual) {
+  individual.isAuthor = true });
 };
 
 /* ------------------------------------------------------------------------------------------------

@@ -25,7 +25,6 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
   starWarsArr.sort(function (left, right) {
     if (parseInt(left.height) < parseInt(right.height)) {
       return 1;
@@ -45,7 +44,7 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  // Solution code here...WE USED THIS WITH THE BUS MALL CATALOG CHALLENGE - TO REMOVE ITEMS FROM THE CART
   arr.splice(idx, 3);
   return arr;
 };
@@ -57,7 +56,6 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
   let resultsArray4 = '';
   resultsArray4 = arr.join(' ');
   return resultsArray4;
@@ -78,7 +76,6 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let results = [];
-  // Solution code here...
   if (!str) {
     return results[0] = [''];
   } else {
@@ -87,7 +84,6 @@ const howMuchPencil = (str) => {
     }
   }
   return results;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,11 +94,10 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
-  const chars = arr.split('');
-  return chars;
-};
+const wordsToCharList = (arr) => arr.split('');
+  // const chars = arr.split('');
+  // return chars;
+// };
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -150,6 +145,7 @@ const listFoods = (recipe) => {
   let result = [];
   recipe.ingredients.forEach(function (item) {
     result.push(item.slice(item.indexOf(' ', item.indexOf(' ') + 1) + 1));
+    // console.log((item.indexOf(' ', item.indexOf(' ') + 1) + 1));
   })
   return result;
 };
@@ -163,9 +159,12 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  let result2 = [];
+  recipe.ingredients.forEach(function (item) {
+    result2.push(item.slice(item.indexOf(' ', item.indexOf(' ') + 1) + 1));
+    // console.log((item.indexOf(' ', item.indexOf(' ') + 1) + 1));
+  })
+  return result2;
 };
 
 /* ------------------------------------------------------------------------------------------------
