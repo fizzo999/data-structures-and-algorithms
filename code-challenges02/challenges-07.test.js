@@ -6,9 +6,11 @@ CHALLENGE 1 - Review
 Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'. 
 ------------------------------------------------------------------------------------------------ */
 
-const replaceZeros = (string) => {
-  // Solution code here...
-}
+const replaceZeros = string => string.replace(/0+/gm, 'zero');
+// Solution code here...
+// const regex = /0+/gm;
+// return string.replace(/0+/gm, 'zero');
+// }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -18,6 +20,10 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 
 const addOne = (arr) => {
   // Solution code here...
+  const output = arr.map((value) => {
+    return value + 1;
+  });
+  return output;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,6 +34,10 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 
 const addQuestion = (arr) => {
   // Solution code here...
+  const newOutputArray = arr.map(eachInhabitant => {
+    return eachInhabitant + '?';
+  })
+  return newOutputArray;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,6 +52,10 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
+  const newArray4 = arr.map(eachInhabitant => {
+    return Math.pow(2, eachInhabitant);
+  })
+  return newArray4;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,6 +66,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
+  const resultsArray5 = [];
+  arr.forEach(inhabitant => {
+    resultsArray5.push(Math.pow(2, inhabitant));
+  })
+  return resultsArray5;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,7 +80,11 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+  // Solution code here...\
+  const resultsArray6 = arr.map(valuePotato => {
+    return Math.pow(2, valuePotato)
+  });
+  return resultsArray6;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,6 +99,10 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
+  const output = arr.map((valuePotato) => {
+    return valuePotato.charCodeAt(0);
+  })
+  return output;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,6 +117,18 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   // Solution code here...
+  let returnValue = '';
+  const resultsArray8 = arr.map(eachPotato => {
+    if (typeof (eachPotato) !== 'number') {
+      returnValue = "N/A";
+    } else if (eachPotato % 2 == 0) {
+      returnValue = "even";
+    } else {
+      returnValue = "odd";
+    }
+    return returnValue;
+  });
+  return resultsArray8;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,6 +175,13 @@ const snorlaxAbilities = {
 
 const extractAbilities = (arr) => {
   // Solution code here...
+  const resultsArray9 = arr.map(eachPotato => {
+    // return eachPotato[index].ability.name;
+    return eachPotato.ability.name;
+  });
+  //uses map to create an array containing only the ability name
+  console.log(resultsArray9);
+  return resultsArray9;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -183,6 +229,14 @@ const snorlaxStats = {
 
 const extractStats = (arr) => {
   // Solution code here...
+  console.log('here is your array !!!!!!', arr);
+  const resultsArray10 = arr.map(eachPotato => {
+    return { name: eachPotato[stat][name], total: eachPotato.effort + eachPotato.baseStat }
+  });
+
+
+  console.log(resultsArray10);
+  return resultsArray10;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -247,36 +301,36 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
-    expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
+    expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([67, 111, 100, 101, 51, 48, 49]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing the keys from an object', () => {
-    expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
+    expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual(['odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd']);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
   });
 
   test('It should work with all odd numbers', () => {
-    expect(evenOdd([1, 3, 5, 7, 9])).toStrictEqual([ 'odd', 'odd', 'odd', 'odd', 'odd' ]);
+    expect(evenOdd([1, 3, 5, 7, 9])).toStrictEqual(['odd', 'odd', 'odd', 'odd', 'odd']);
     expect(evenOdd([1, 3, 5, 7, 9]).length).toStrictEqual(5);
   });
 
   test('It should work with all even numbers', () => {
-    expect(evenOdd([2, 4, 6, 8, 10])).toStrictEqual([ 'even', 'even', 'even', 'even', 'even' ]);
+    expect(evenOdd([2, 4, 6, 8, 10])).toStrictEqual(['even', 'even', 'even', 'even', 'even']);
     expect(evenOdd([2, 4, 6, 8, 10]).length).toStrictEqual(5);
   });
 
   test('It should return the string "N/A" if a non-number is included in the array', () => {
-    expect(evenOdd([5, 8, 2, 'hi'])).toStrictEqual([ 'odd', 'even', 'even', 'N/A' ]);
+    expect(evenOdd([5, 8, 2, 'hi'])).toStrictEqual(['odd', 'even', 'even', 'N/A']);
     expect(evenOdd([5, 8, 2, 'hi']).length).toStrictEqual(4);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return an array containing only the ability names', () => {
     expect(extractAbilities(snorlaxAbilities.abilities)).toStrictEqual(['gluttony', 'cute charm', 'immunity']);
     expect(extractAbilities(snorlaxAbilities.abilities).length).toStrictEqual(3);

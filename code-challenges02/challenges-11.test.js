@@ -13,6 +13,12 @@ You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
   // Solution code here...
+  const resultsArray1 = [];
+  people.map(each => {
+    resultsArray1.push(each.firstName + ' ' + each.lastName);
+  });
+  console.log(resultsArray1);
+  return resultsArray1;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -25,6 +31,9 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 
 const validatePin = (pin) => {
   // Solution code here...
+  const regex2 = /\b\d{4}\b/gm;
+  return regex2.test(pin);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -37,6 +46,9 @@ If the word is between 5 and 10 characters long, return true. Otherwise, return 
 
 const validateWord = (word) => {
   // Solution code here...
+  const regex3 = /\b[a-zA-Z]{5,10}\b/gm;
+  return regex3.test(word);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,6 +61,8 @@ If it does, return true. If not, return false.
 
 const hasNumber = (string) => {
   // Solution code here...
+  const regex4 = /[A-z]\d/gm;
+  return regex4.test(string);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,6 +83,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
+  const regex5 = /^(\w+[.])?\w+@\w+\.(net|com|org)$/;
+  return regex5.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,6 +110,8 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+  const regex6 = /^(\(\d{3}\)|\d{3})[-\s]?\d{3}[-\s]?\d{4}$/;
+  return regex6.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -107,6 +125,8 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 
 const findTagNames = elements => {
   // Solution code here...
+  const regex7 = /\/w+/gm;
+  return regex7.test(elements);
 };
 
 /* ------------------------------------------------------------------------------------------------

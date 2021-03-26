@@ -25,7 +25,16 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
+  starWarsArr.sort(function (left, right) {
+    if (parseInt(left.height) < parseInt(right.height)) {
+      return 1;
+    } else if (parseInt(left.height) > parseInt(right.height)) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  return starWarsArr;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,7 +44,9 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  // Solution code here...WE USED THIS WITH THE BUS MALL CATALOG CHALLENGE - TO REMOVE ITEMS FROM THE CART
+  arr.splice(idx, 3);
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +56,9 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
+  let resultsArray4 = '';
+  resultsArray4 = arr.join(' ');
+  return resultsArray4;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,9 +75,15 @@ For example, if the input is 'Welcome', the output will be:
 ------------------------------------------------------------------------------------------------ */
 
 const howMuchPencil = (str) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  let results = [];
+  if (!str) {
+    return results[0] = [''];
+  } else {
+    for (let i = 0; i < str.length + 1; i++) {
+      results.push(str.slice(i));
+    }
+  }
+  return results;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,9 +94,10 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
-};
+const wordsToCharList = (arr) => arr.split('');
+  // const chars = arr.split('');
+  // return chars;
+// };
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,11 +139,14 @@ const gruffaloCrumble = {
     'Bake for 12-15 hours',
   ]
 };
-
+// in english I d say: take every array item, find the position of 2nd empty string, chopp off everything from that second empty string position and return it into a new array;
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(function (item) {
+    result.push(item.slice(item.indexOf(' ', item.indexOf(' ') + 1) + 1));
+    // console.log((item.indexOf(' ', item.indexOf(' ') + 1) + 1));
+  })
   return result;
 };
 
@@ -136,9 +159,12 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
-  return result;
+  let result2 = [];
+  recipe.ingredients.forEach(function (item) {
+    result2.push(item.slice(item.indexOf(' ', item.indexOf(' ') + 1) + 1));
+    // console.log((item.indexOf(' ', item.indexOf(' ') + 1) + 1));
+  })
+  return result2;
 };
 
 /* ------------------------------------------------------------------------------------------------
