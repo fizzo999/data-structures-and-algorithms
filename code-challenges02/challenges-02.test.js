@@ -10,7 +10,16 @@ Write a function named raisedToTheThird that takes in an array of numbers and re
 
 const raisedToTheThird = (arr) => {
   // Solution code here...
+
+  let resultsArray1 = [];
+
+  arr.forEach(number => resultsArray1.push(Math.pow(number, 3)));
+
+  return resultsArray1;
+
 }
+
+// return [8, 64, 125, -343, 0];
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -21,6 +30,8 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 const appendTheEnd = (str) => {
   // Solution code here...
+  let results2 = str + ' The end.';
+  return results2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -38,6 +49,9 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   // Solution code here...
+  let temp = arr[0];
+  console.log(temp);
+  arr.push(temp);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,9 +69,7 @@ addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
-const addBirthYearProperty = (obj, year) => {
-  // Solution code here...
-};
+const addBirthYearProperty = (obj, year) => obj.yearBorn = year;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
@@ -73,7 +85,8 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-  // Solution code here...
+  people.forEach(function (individual) {
+  individual.isAuthor = true });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,11 +104,7 @@ append(a, b);
 console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
-const append = (arr1, arr2) => {
-  // Solution code here...
-
-};
-
+const append = (arr1, arr2) => arr2.forEach(function (inhabitantsArr2) { arr1.push(inhabitantsArr2) });
 /* ------------------------------------------------------------------------------------------------
 TESTS
 
@@ -141,7 +150,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should add a property to every object in an array', () => {
     const a = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }, { fullName: 'Kurt Vonnegut' }];
     setStatusAsAuthor(a);
@@ -152,7 +161,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should append the second array to the first', () => {
     const a = [1, 2, 3, 4];
     const b = [5, 6, 7, 8];

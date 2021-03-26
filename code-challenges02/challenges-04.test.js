@@ -4,10 +4,16 @@
 CHALLENGE 1 - Review
 
 Write a function called addTwo that takes in an array and adds two to every value using a for loop. Place the new value in a new array. Return the new array. 
+
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
   // Solution code here...
+  const resultsArray1 = [];
+  arr.forEach(function (arrayItem) {
+    resultsArray1.push(arrayItem + 2);
+  })
+  return resultsArray1;
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -17,9 +23,13 @@ Write a function named containsW that takes in a string. This function should us
 
 ------------------------------------------------------------------------------------------------ */
 
-const containsW = (str) => {
-  // Solution code here...
-};
+const containsW = str => (/w/gm).test(str);
+
+// Solution code here...
+// const testRegEx = /w/gm;
+// return testRegEx.test(str);
+// return (/w/gm).test(str);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -33,9 +43,12 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
-const isNum = (input) => {
-  // Solution code here...
-};
+const isNum = input => (/\d/gm).test(input);
+// Solution code here...
+// const testRegEx = /\d/gm;
+// return testRegEx.test(input);
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -44,9 +57,11 @@ Write a function named containsWorld that takes in a string or number of any len
 
 ------------------------------------------------------------------------------------------------ */
 
-const containsWorld = (input) => {
-  // Solution code here...
-};
+const containsWorld = input => (/world/gm).test(input);
+// Solution code here...
+// const testRegEx = /world/gm;
+// return testRegEx.test(input);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -56,9 +71,11 @@ Write a function named isCapitalized that takes in a string. This function shoul
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
-const isCapitalized = (str) => {
-  // Solution code here...
-};
+const isCapitalized = str => str.match(/\b[A-Z]\w*\b/g) || [];
+// Solution code here...
+// const testRegEx = /\b[A-Z]\w*\b/g;
+// return str.match(testRegEx) || [];
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -68,6 +85,15 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
+  const resultsArray6 = [];
+  const testRegEx = /^[A-J]/;
+
+  arr.forEach(function (item) {
+    if (testRegEx.test(item)) {
+      resultsArray6.push(item)
+    }
+  })
+  return resultsArray6;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -84,6 +110,22 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  const testRegEx1 = /^(Oct)$/gm;
+  const testRegEx2 = /^(oct)$/gm;
+  const testRegEx3 = /^(October)$/gm;
+  const testRegEx4 = /^(october)$/gm;
+  // const testRegEx2 = /\b(October|Oct|october|oct)\b/gm;
+  if (testRegEx1.test(input)) {
+    return true;
+  } else if (testRegEx2.test(input)) {
+    return true;
+  } else if (testRegEx3.test(input)) {
+    return true;
+  } else if (testRegEx4.test(input)) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,9 +138,8 @@ For example, if given the string "Hello, and have a wonderful day!", the word "H
 The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "a ", "wonderful "].
 ------------------------------------------------------------------------------------------------ */
 
-const noPunctuation = str => {
-  // Solution code here...
-};
+const noPunctuation = str => str.match(/\b\w*\s/gm) || [];
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -112,9 +153,12 @@ The function should return a string containing the consonants in their original 
 For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
-let hangman = (str) => {
-  // Solution code here...
-};
+let hangman = str => str.replace(/[aeiouAEIOU]/gm, '_');
+
+
+//   const regExStrg = /[aeiouAEIOU]/gm
+//   return str.replace(regExStrg, '_');
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -128,9 +172,10 @@ Hint: All of these words end with the letters "ells".
 
 const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
 
-const findShells = (str) => {
-  // Solution code here...
-};
+const findShells = (str) =>  str.match(/((s)|(sh)|(seash))(ells)\b/gm);
+  // const resultsArray10 = str.match(/((s)|(sh)|(seash))(ells)\b/gm);
+  // return resultsArray10;}
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -190,7 +235,7 @@ describe('Testing challenge 5', () => {
   test('It should only return words that begin with a capital letter', () => {
     const capitalResult = isCapitalized('We only want to Return the Words that begin With a capital Letter');
 
-    expect(capitalResult).toStrictEqual([ 'We', 'Return', 'Words', 'With', 'Letter' ]);
+    expect(capitalResult).toStrictEqual(['We', 'Return', 'Words', 'With', 'Letter']);
     expect(capitalResult.length).toStrictEqual(5);
 
     expect(isCapitalized('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toStrictEqual(['Given', 'Runnymede', 'Windsor', 'Staines', 'June', 'May']);
@@ -215,7 +260,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should match any of the acceptable inputs', () => {
     expect(matchMonth('Oct')).toBeTruthy();
     expect(matchMonth('oct')).toBeTruthy();
@@ -233,11 +278,11 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacinia vel massa sed egestas. Nunc faucibus iaculis elit, a scelerisque enim condimentum sed. Aenean ac scelerisque sem, et pharetra diam.';
 
   test('It should only return words that are immediately followed by a space', () => {
-    expect(noPunctuation(lorem)).toStrictEqual([ 'Lorem ', 'ipsum ', 'dolor ', 'sit ', 'consectetur ', 'adipiscing ', 'Cras ', 'lacinia ', 'vel ', 'massa ', 'sed ', 'Nunc ', 'faucibus ', 'iaculis ', 'a ', 'scelerisque ', 'enim ', 'condimentum ', 'Aenean ', 'ac ', 'scelerisque ', 'et ', 'pharetra ' ]);
+    expect(noPunctuation(lorem)).toStrictEqual(['Lorem ', 'ipsum ', 'dolor ', 'sit ', 'consectetur ', 'adipiscing ', 'Cras ', 'lacinia ', 'vel ', 'massa ', 'sed ', 'Nunc ', 'faucibus ', 'iaculis ', 'a ', 'scelerisque ', 'enim ', 'condimentum ', 'Aenean ', 'ac ', 'scelerisque ', 'et ', 'pharetra ']);
     expect(noPunctuation(lorem).length).toStrictEqual(23);
     expect(noPunctuation('Given by our hand in the meadow that is called Runnymede, between Windsor and Staines, on the fifteenth day of June in the seventeenth year of our reign (i.e. 1215: the new regnal year began on 28 May).')).toEqual(expect.arrayContaining(['Given ', 'by ', 'our ', 'hand ', 'in ', 'the ', 'meadow ', 'that ', 'is ', 'called ', 'between ', 'Windsor ', 'and ', 'on ', 'the ', 'fifteenth ', 'day ', 'of ', 'June ', 'in ', 'the ', 'seventeenth ', 'year ', 'of ', 'our ', 'reign ', 'the ', 'new ', 'regnal ', 'year ', 'began ', 'on ', '28 ']));
   });
@@ -247,7 +292,7 @@ xdescribe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   let startString = 'This is a regex challenge. We are trying to create a hangman phrase where all of the vowels are missing!';
 
   test('It should remove the vowels from the hangman string and replace them with underscores', () => {
@@ -260,7 +305,7 @@ xdescribe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return an array of instances of "sells", shells", and "seashells"', () => {
     expect(findShells(seashells)).toStrictEqual(['sells', 'seashells', 'shells', 'sells', 'seashells', 'sells', 'shells', 'sells', 'shells']);
     expect(findShells(seashells).length).toStrictEqual(9);
