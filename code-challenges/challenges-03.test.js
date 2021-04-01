@@ -7,7 +7,15 @@ Write a function called addTwo that takes in an array and adds two to every valu
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
-  // Solution code here...
+  // const resultsArr1 = [];
+  // for (let i=0; i < arr.length; i++) {
+  //   resultsArr1.push(arr[i] + 2);
+  // }
+  // const resultsArr1 = [];
+  // arr.forEach(num => resultsArr1.push(num + 2));
+  const resultsArr1 = arr.map(num => num + 2);
+  // console.log(resultsArr1);
+  return resultsArr1;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -19,7 +27,14 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => {
-  // Solution code here...
+  const reultsArr2 = arr.filter(numOrStr => {
+    if(typeof(numOrStr) == 'number') {
+      return true;
+    } else {
+      return false;
+    }
+  })
+return reultsArr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,8 +46,10 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  // Solution code here...
-};
+  const resultsArr3 = arr.filter(str => str.includes('and'));
+  // console.log(resultsArr3);
+  return resultsArr3;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -43,7 +60,14 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+const resultsArr4 = arr.filter(num => {
+    if(num % 2 === 0) {
+      return false
+    } else {
+      return true
+    };
+  });
+return resultsArr4;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +79,15 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  const resultsArr5 = arr.filter(num => {
+    if (forbiddenValues.includes(num)) {
+      return false; 
+    } else {
+      return true;
+    }
+  });
+  // console.log('THIS IS NUMBER 5', resultsArr5);
+  return resultsArr5;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +130,10 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  const resultsArr6 = arr.filter(item => item.baseStat > minBaseStat)
+
+
+  return resultsArr6; 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,7 +145,15 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  const resultsArr6 = [];
+  arr.forEach(item => {
+    if (item.baseStat > minBaseStat) {
+      resultsArr6.push(item.stat.name)
+    }});
+  
+  // console.log(resultsArr6);
+
+  return resultsArr6; 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -163,7 +206,15 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  const resultsArr8 = arr.filter(character => {
+    if (!character.children) {
+      return true;
+    } else {
+      return false;
+    }
+  })
+  // console.log(resultsArr8);
+  return resultsArr8;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -175,7 +226,23 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  const tempArr9 = arr.filter(numOrNot => {
+    if(typeof(numOrNot) == 'number') {
+      return true
+    } else {
+      return false
+    }
+  });
+  const resultsArr9 = tempArr9.map(num => {
+    if(num % 2 === 0) {
+      return 'even'
+    } else {
+      return 'odd'
+    }
+  })
+  // console.log(tempArr9);
+  // console.log(resultsArr9);
+  return resultsArr9;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -246,7 +313,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return an array containing the stats that are greater than the input', () => {
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([ { stat: { url: 'https://pokeapi.co/api/v2/stat/5/', name: 'special-defense' }, effort: 2, baseStat: 110 } ]);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75).length).toStrictEqual(1);
@@ -257,7 +324,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the name of the stats that exceed that maximum', () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([ 'special-defense', 'special-attack' ]);
     expect(getStatName(snorlaxData.stats, 50).length).toStrictEqual(2);
@@ -278,14 +345,14 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing characters who do not have children', () => {
     expect(getCharactersWithoutChildren(characters)).toStrictEqual([ { name: 'Sansa', spouse: 'Tyrion', house: 'Stark' }, { name: 'Jon', spouse: null, house: 'Snow' } ]);
     expect(getCharactersWithoutChildren(characters).length).toStrictEqual(2);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove non-integers and return "even" or "odd', () => {
     expect(evenOddNumericValues(['Gregor', 2, 4, 1])).toStrictEqual(['even', 'even', 'odd']);
     expect(evenOddNumericValues(['Gregor', 2, 4, 1]).length).toStrictEqual(3);
