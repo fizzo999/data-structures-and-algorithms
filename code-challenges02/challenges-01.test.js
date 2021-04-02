@@ -34,8 +34,7 @@ const addExclamation = (arr) => {
   })
   // arr.forEach(function (string) {
   //   results2.push(string + '!');
-
-  })
+  // })
 
   return results2;
   console.log(results2);
