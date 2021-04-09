@@ -191,11 +191,12 @@ const characters = [
 const countNumberOfChildren = (arr) => {
   let results7 =  arr.reduce( (answerSoFar, currentValue) => {
     if (currentValue.children) {
-      answerSoFar = answerSoFar + children.length;
+      answerSoFar = answerSoFar + currentValue.children.length;
     }
+    // console.log(currentValue);
     return answerSoFar;
   }, 0);
-  console.log('hurray we have children', results7);
+  // console.log('hurray we have children', results7);
   return results7;
 };
 
@@ -208,7 +209,12 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let result8 = arr.reduce((answerSoFar, currentValue) => {
+    return answerSoFar + currentValue
+  }, 0);
+  let result8b = result8/(arr.length);
+  // console.log(result8, result8b)
+  return result8b;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -229,7 +235,16 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  const resultsArr9 = arr.reduce((answerSoFar, currentValue) => {
+    if(isPrime(currentValue)) {
+      answerSoFar++
+    }
+    return answerSoFar; 
+    // answerSoFar.push(currentValue);
+    // return answerSoFar;
+  }, 0);
+  // console.log(resultsArr9);
+  return resultsArr9;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -272,7 +287,16 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  const resultsObj = arr.reduce((answerSoFar, currentValue) => {
+    console.log(currentValue.stat.name);
+    if(statName == currentValue.stat.name) {
+      return currentValue;
+    // } else {
+    //   return null;
+    }
+  }, {});
+  console.log(resultsObj);
+  return resultsObj;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -343,19 +367,19 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
