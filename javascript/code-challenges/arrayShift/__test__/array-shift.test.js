@@ -1,6 +1,6 @@
 'use strict';
 
-const insertShiftArray = require('../../../../code-challenges/arrayShift/array-shift.js');
+const insertShiftArray = require('../array-shift.js');
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
