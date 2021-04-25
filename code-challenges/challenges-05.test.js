@@ -289,10 +289,10 @@ const snorlaxData = {
 const extractStat = (statName, arr) => {
   const resultsObj = arr.reduce((answerSoFar, currentValue) => {
     console.log(currentValue.stat.name);
-    if(statName == currentValue.stat.name) {
-      return currentValue;
-    // } else {
-    //   return null;
+    if(statName !== currentValue.stat.name) {
+      return null;
+    } else if (statName === currentValue.stat.name){
+      return answerSoFar + currentValue;
     }
   }, {});
   console.log(resultsObj);
