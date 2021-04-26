@@ -19,4 +19,16 @@ Write a function called insertShiftArray which takes in an array and the value t
 
 ## Solution
 
-![binarySearch - diagram](../../assets/1325UMI-whiteboard.PNG)
+![binarySearch - diagram](../../../assets/1325UMI-whiteboard.PNG)
+
+
+
+
+<hr></hr>
+
+
+### https://skilled.dev/course/binary-search-trees
+![binarySearch - diagram2 - ](../../../assets/binarySearchTree.png)
+
+
+
