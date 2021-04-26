@@ -1,15 +1,47 @@
 # Data Structures and Algorithms
 
-See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-code-challenges), in the Code 301 Setup Guide.
+### 401 Data Structures, Code Challenges
 
-## Repository Quick Tour and Usage
+### Table of Contents
+
+### ARRAY CHALLENGES
+
+- Challenge 1: [Array Shift](javascript/code-challenges/arrayShift)
+- Challenge 2: [Array Binary Search](javascript/code-challenges/arrayBinarySearch)
+
+### LINKED LISTS
+
+- Challenge 1: [LinkedList - apend, insert, includes, toString](javascript/Data-Structures/linkedList)
 
 ### 301 Code Challenges
 
-Under the `data-structures-and-algorithms` repository, at the top level is a folder called `code-challenges`
+- Challenge 1: [Challenge 1](code-challenges/)
+- Challenge 2: [Challenge 2](code-challenges/)
+- Challenge 3: [Challenge 3](code-challenges/)
+- Challenge 4: [Challenge 4](code-challenges/)
+- Challenge 5: [Challenge 5](code-challenges/)
+- Challenge 6: [Challenge 6](code-challenges/)
+- Challenge 7: [Challenge 7](code-challenges/)
+- Challenge 8: [Challenge 8](code-challenges/)
+- Challenge 9: [Challenge 9](code-challenges/)
+- Challenge 10: [Challenge 10](code-challenges/)
+- Challenge 11: [Challenge 11](code-challenges/)
+- Challenge 12: [Challenge 12](code-challenges/)
+- Challenge 13: [Challenge 13](code-challenges/)
+- Challenge 14: [Challenge 14](code-challenges/)
 
-Each day, you'll add one new file to this folder to do your work for the day's assigned code challenge
+### 301 Code Challenges REACT CURRICULUM
 
-### 401 Data Structures, Code Challenges
-
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+- Challenge 1: [Challenge 1](code-challenges02/)
+- Challenge 2: [Challenge 2](code-challenges02/)
+- Challenge 3: [Challenge 3](code-challenges02/)
+- Challenge 4: [Challenge 4](code-challenges02/)
+- Challenge 5: [Challenge 5](code-challenges02/)
+- Challenge 6: [Challenge 6](code-challenges02/)
+- Challenge 7: [Challenge 7](code-challenges02/)
+- Challenge 8: [Challenge 8](code-challenges02/)
+- Challenge 9: [Challenge 9](code-challenges02/)
+- Challenge 10: [Challenge 10](code-challenges02/)
+- Challenge 11: [Challenge 11](code-challenges02/)
+- Challenge 12: [Challenge 12](code-challenges02/)
+- Challenge 13: [Challenge 13](code-challenges02/)
