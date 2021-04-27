@@ -115,6 +115,40 @@ class LinkedList {
     }
   }
 
+  kthFromEnd(k) {
+    if(typeof k !== "number") {
+      return 'Dude, what are you doing ? this is not a number, I mean,.... really?'
+    } else if (!this.head) {
+      return 'The link list is empty';      
+    } else if (k < 0 ) {
+      return 'Dude, what are you doing with negative inputs, I mean,.... really?'
+    } else {
+      let current = this.head;
+      let counter = 1;
+      while(current.next) {
+        current = current.next;
+        counter++;
+      }
+      // now we know the length of the list
+      console.log('your list is ++++++++++++++++++++++++ this long', counter, current);
+      if (+k +1 > counter) {
+        return 'The link list isn`t that long !!!';
+      } else {
+      // again go from the start
+      current = this.head;
+      let desiredPosition = counter - k + 1;
+      if(counter === k) return 'your list is ++++++++++++++++++++++++ this long';
+      let newPosition = 1;
+      while(current.next && (newPosition < desiredPosition)) {
+        current = current.next;
+        newPosition++;
+      }
+      console.log('YAY we found it ===+++=== we have arrived', current);
+      return current.value;  
+      }
+
+    }
+  }
 
   // findMiddle() {
    

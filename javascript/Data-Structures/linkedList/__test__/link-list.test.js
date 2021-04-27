@@ -102,8 +102,27 @@ describe('Linked List TESTING', () => {
     expect(list.head.next.value).toEqual(999);
   });
 
-  
+  it('should return the value kth from the end of a linked list', () => {
+    let list = new LL();
+    list.append(10);
+    list.append(30);
+    list.append(1010101);
+    list.insert(99999);
+    list.insert(55555);
+    list.insert(100);
+    list.insert(500);
+    list.toString();
+    expect(list.kthFromEnd(10)).toBe('The link list isn`t that long !!!');
+    expect(list.kthFromEnd(7)).toBe('The link list isn`t that long !!!');
+    expect(list.kthFromEnd(-5)).toBe('Dude, what are you doing with negative inputs, I mean,.... really?');
+    // console.log(list.kthFromEnd(7));
+  });
 
+  it('should return the value kth from the end of a linked list', () => {
+    let list = new LL();
+    expect(list.kthFromEnd(0)).toEqual('The link list is empty');
+    expect(list.kthFromEnd('abc')).toEqual('Dude, what are you doing ? this is not a number, I mean,.... really?');
+  });
 
 
 });

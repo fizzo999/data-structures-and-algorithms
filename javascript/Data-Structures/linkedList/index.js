@@ -40,3 +40,18 @@ console.log('============ YAY HERE IS THE NEW LIST', ll);
 
 ll.toString();
 console.log('YAYAYAYAYAYA===================', ll);
+
+ll.kthFromEnd(5);
+ll.toString();
+console.log('YAYAYAYAYAYA===================', ll);
+
+ll.kthFromEnd(3);
+ll.toString();
+console.log('YAYAYAYAYAYA===================', ll);
+
+ll.kthFromEnd(0);
+ll.kthFromEnd(-5);
+console.log(ll.kthFromEnd(0));
+console.log(ll.kthFromEnd(-5));
+console.log(ll.kthFromEnd('abc'));
+
