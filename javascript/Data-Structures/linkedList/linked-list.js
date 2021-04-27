@@ -47,7 +47,6 @@ class LinkedList {
       }
       return false;
     }
-    return this;
   }
 
   toString() {
@@ -66,6 +65,56 @@ class LinkedList {
     console.log('=============================', solution); 
     return solution;
   }
+
+  insertBefore(value, newVal) {
+    let brandNewNode = new Node(newVal);
+    if(!this.head) {
+      console.log('empty list');
+      return('empty list');
+    } else if(this.head.value === value) {
+      brandNewNode.next = this.head;
+      this.head = brandNewNode;
+      return 'BRAND NEW HEAD NODE CREATED', this;
+    } else {
+      let current = this.head;
+      while(current.next) {
+        if(current.next.value === value) {
+          console.log('WE FOUND THE ONE BEFORE INSERTION', current);
+          brandNewNode.next = current.next;
+          current.next = brandNewNode;
+          return 'WE INSERTED THE NEW NODE', this;
+        }
+        current = current.next;
+      }
+      return 'NO SUCH VALUE FOUND', this;
+    }
+
+  }
+
+  insertAfter(value, newVal) {
+    let brandNewNode = new Node(newVal);
+    if(!this.head) {
+      console.log('empty list');
+      return('empty list');
+    } else {
+      let current = this.head;
+      while(current.next) {
+        if(current.value === value) {
+          console.log('WE FOUND THE ONE WE WANT TO INSERT AFTER', current);
+          brandNewNode.next = current.next;
+          current.next = brandNewNode;
+          return 'WE INSERTED THE NEW NODE after THE VALUE FOUND', this;
+        }
+        current = current.next;
+        if(current.next === null) {
+          current.next = brandNewNode;
+          return 'WE FOUND THE VALUE AT THE VERY END AND APPENDED THE VALUE', this;
+        }
+      }
+      return 'NO SUCH VALUE FOUND', this;
+    }
+  }
+
 
   // findMiddle() {
    

@@ -58,6 +58,52 @@ describe('Linked List TESTING', () => {
     expect(list.toString()).toEqual(null);
   });
 
+  it('should test for inserting a node at the end of a linked list', () => {
+    let list = new LL();
+    let first = 100;
+    let second = 200;
+    list.append(first);
+    // console.log('==============================', list.head);
+    expect(list.head.value).toEqual(100);
+    list.append(second);
+    expect(list.head.next.value).toEqual(200);
+    expect(list.head.next.next).toEqual(null);
+  });
+
+  it('should test for inserting a node before a given value somewhere in a linked list', () => {
+    let list = new LL();
+    let first = 100;
+    let second = 200;
+    let third = 300;
+    let toBeInserted = 999;
+    list.append(first);
+    list.append(second);
+    list.append(third);
+    // console.log('==============================', list);
+    list.insertBefore(200, toBeInserted);
+    expect(list.head.next.value).toEqual(999);
+    list.insertBefore(100, toBeInserted);
+    expect(list.head.value).toEqual(999);
+  });
+
+  it('should test for inserting a node after a given value somewhere in a linked list', () => {
+    let list = new LL();
+    let first = 100;
+    let second = 200;
+    let third = 300;
+    let toBeInserted = 999;
+    list.append(first);
+    list.append(second);
+    list.append(third);
+    list.insertAfter(200, toBeInserted);
+    expect(list.head.next.next.value).toEqual(999);
+    // console.log('==============================', list);
+    list.insertAfter(100, toBeInserted);
+    expect(list.head.next.value).toEqual(999);
+  });
+
+  
+
 
 
 });
