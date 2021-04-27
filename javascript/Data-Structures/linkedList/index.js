@@ -22,5 +22,21 @@ let res = ll.includes(15);
 
 console.log('YAYAYAYAYAYAY', res, ll);
 
+
+ll.insertBefore(10, 99999);
+console.log('============ YAY HERE IS THE NEW LIST', ll);
+
+ll.toString();
+console.log('YAYAYAYAYAYA===================', ll);
+
+ll.insertAfter(100, 55555);
+console.log('============ YAY HERE IS THE NEW LIST', ll);
+
+ll.toString();
+console.log('YAYAYAYAYAYA===================', ll);
+
+ll.insertAfter(30, 1010101);
+console.log('============ YAY HERE IS THE NEW LIST', ll);
+
 ll.toString();
 console.log('YAYAYAYAYAYA===================', ll);
