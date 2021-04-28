@@ -20,3 +20,6 @@
 ## Solution
 
 ![linked list - diagram](../../../assets/1513LinkedList001.PNG)
+
+## Resources
+[https://www.geeksforgeeks.org/nth-node-from-the-end-of-a-linked-list/](https://www.geeksforgeeks.org/nth-node-from-the-end-of-a-linked-list/)
