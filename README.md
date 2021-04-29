@@ -12,6 +12,9 @@
 ### LINKED LISTS
 
 - Challenge 1: [LinkedList - apend, insert, includes, toString](javascript/Data-Structures/linkedList)
+- Challenge 2: [LinkedList - insertBefore and insertAfter](javascript/Data-Structures/linkedList)
+- Challenge 3: [LinkedList - k-th from the end](javascript/Data-Structures/linkedList)
+- Challenge 4: [LinkedList - zip](javascript/Data-Structures/linkedList)
 
 ### 301 Code Challenges
 
