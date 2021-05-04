@@ -17,14 +17,16 @@ class Stack {
       return this;
     } else {
       let tempNode = this.top;
-      this.top = brandNewNode;
+      // this.top = brandNewNode;
+      this.top = brandNewNode.value;
       this.top.next = tempNode;
       this.length++;
       return this;
     }
   }  
   pop() {
-    if (this.length === 0) return 'sorry - empty stack';
+    // if (this.length === 0) return 'sorry - empty stack';
+    if (this.length === 0) return null;
     if (this.length > 1) {
     let topNodeToBeDeleted = this.top;
     let tempNode = this.top.next;
@@ -41,7 +43,8 @@ class Stack {
 
   }  
   peek() {
-    if(this.length === 0) return 'sorry - empty stack';
+    // if(this.length === 0) return 'sorry - empty stack';
+    if(this.length === 0) return null;
     let lastIndexNumber = this.length;
     let result = this.top;
     return `This is the last element at index number ${lastIndexNumber - 1}: ${result}`;
