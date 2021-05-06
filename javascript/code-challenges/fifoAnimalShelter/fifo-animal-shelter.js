@@ -41,26 +41,43 @@ class AnimalShelter {
   
   isEmpty(){
 
-  if(this.catstack1.length === 0) return true;
+  if(this.cat.length === 0) return true;
   return false; 
   }
 
   toString() {
     let solutionCat = ''
-    if(this.catstack1.length === 0) {
+    if(this.cat.length === 0) {
       console.log('empty queue');
       return null;
     } else {
-      let current = this.catstack1;
+      let current = this.cat;
       // console.log('CURRENT===============Current.next', current);
       let counter = 0;
-      while(counter <= this.catstack1.length -1) {        
+      while(counter <= this.cat.length -1) {        
         solutionCat = solutionCat + `{${current[counter]}} -> `;
         counter++;
       }
       solutionCat = solutionCat + ` NULL`
     }
-    console.log('===============CATS==============', solutionCat); 
+    console.log('===============CATS==============', solutionCat);
+
+
+    let solutionDog = ''
+    if(this.dog.length === 0) {
+      console.log('empty queue');
+      return null;
+    } else {
+      let current = this.dog;
+      // console.log('CURRENT===============Current.next', current);
+      let counter = 0;
+      while(counter <= this.dog.length -1) {        
+        solutionDog = solutionDog + `{${current[counter]}} -> `;
+        counter++;
+      }
+      solutionDog = solutionDog + ` NULL`
+    }
+    console.log('===============DOGS==============', solutionDog);
     return solutionCat;
   }
 }
