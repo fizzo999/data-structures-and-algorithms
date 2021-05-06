@@ -8,13 +8,17 @@
 
 - Challenge 1: [Array Shift](javascript/code-challenges/arrayShift)
 - Challenge 2: [Array Binary Search](javascript/code-challenges/arrayBinarySearch)
-
-### LINKED LISTS
-
-- Challenge 1: [LinkedList - apend, insert, includes, toString](javascript/Data-Structures/linkedList)
-- Challenge 2: [LinkedList - insertBefore and insertAfter](javascript/Data-Structures/linkedList)
-- Challenge 3: [LinkedList - k-th from the end](javascript/Data-Structures/linkedList)
-- Challenge 4: [LinkedList - zip](javascript/Data-Structures/linkedList)
+- Challenge 3: [array-binary-search](javascript/code-challenges/arrayBinarySearch)
+- Challenge 4: [mockInterview - Fibonacci Sequence](javascript/code-challenges/fibonacciSequence)
+- Challenge 5: [LinkedList - insert, includes, toString](javascript/Data-Structures/linkedList)
+- Challenge 6: [LinkedList - insertions](javascript/Data-Structures/linkedList)
+- Challenge 7: [LinkedList - k-th from the end](javascript/Data-Structures/linkedList)
+- Challenge 8: [LinkedList - zip](javascript/Data-Structures/linkedList)
+- Challenge 9:
+- Challenge 10: [stacksAndQueues](javascript/Data-Structures/stacksAndQueues)
+- Challenge 11: [queue with stacks](javascript/Data-Structures/queueWithStacks)
+- Challenge 12: [fifo animal shelter queue](javascript/code-challenges/fifoAnimalShelter)
+- Challenge 13: [MultiBracketValidation](javascript/code-challenges/multiBracketValidation)
 
 ### 301 Code Challenges
 
