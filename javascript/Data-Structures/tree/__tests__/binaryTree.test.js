@@ -111,4 +111,23 @@ describe('========== Binary Search Tree ==========', () => {
 
 
   });
+
+  it('should return the maximum value when searching for a valid value in the Binary Tree or false when the tree is empty', () => {
+    let binarySearchTree = new BST();
+    expect(binarySearchTree.findMaximumValue()).toEqual('this tree is empty');
+    
+    binarySearchTree.addNode(1);
+    expect(binarySearchTree.findMaximumValue()).toEqual(1);
+
+    binarySearchTree.addNode(2);
+    binarySearchTree.addNode(3);
+    binarySearchTree.addNode(4);
+    binarySearchTree.addNode(5);
+    binarySearchTree.addNode(6);
+    binarySearchTree.addNode(7);
+    binarySearchTree.addNode(8);
+    binarySearchTree.addNode(9);
+    binarySearchTree.addNode(10);    
+    expect(binarySearchTree.findMaximumValue()).toEqual(10);
+  });
 });
