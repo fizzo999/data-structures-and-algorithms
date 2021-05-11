@@ -52,6 +52,20 @@ class BinarySearchTree {
     }
     return found;
   }
+  
+  findMaximumValue() {
+    if(!this.root) return 'this tree is empty';
+    let maxVal = this.root.value;
+    let _walk = node => {
+      if (node.value > maxVal) maxVal = node.value;
+      if (node.left) _walk(node.left);
+      if (node.right) _walk(node.right);
+    }
+    _walk(this.root);
+    return maxVal;
+  }
+
+
 
   preOrder(){
     if(!this.root) {

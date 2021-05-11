@@ -14,8 +14,9 @@ binarySearchTree.addNode(7);
 binarySearchTree.addNode(8);
 binarySearchTree.addNode(9);
 binarySearchTree.addNode(10);
-console.log(binarySearchTree.contains(36));
+console.log(binarySearchTree.contains(9));
 console.log(binarySearchTree.contains(33));
+console.log(binarySearchTree.findMaximumValue());
 
 console.log('THIS IS PRE ORDER',binarySearchTree.preOrder());
 console.log('THIS IS IN ORDER',binarySearchTree.inOrder());
