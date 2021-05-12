@@ -130,4 +130,23 @@ describe('========== Binary Search Tree ==========', () => {
     binarySearchTree.addNode(10);    
     expect(binarySearchTree.findMaximumValue()).toEqual(10);
   });
+
+  it('should return the values of the Binary Tree using the breadthFirstMethod()', () => {
+    let binarySearchTree = new BT();
+    expect(binarySearchTree.breadthFirstTraversal()).toEqual('this tree is empty');
+    
+    binarySearchTree.addNode(1);
+    expect(binarySearchTree.breadthFirstTraversal()).toEqual([1]);
+
+    binarySearchTree.addNode(2);
+    binarySearchTree.addNode(3);
+    binarySearchTree.addNode(4);
+    binarySearchTree.addNode(5);
+    binarySearchTree.addNode(6);
+    binarySearchTree.addNode(7);
+    binarySearchTree.addNode(8);
+    binarySearchTree.addNode(9);
+    binarySearchTree.addNode(10);    
+    expect(binarySearchTree.breadthFirstTraversal()).toEqual([1, 2, 3, 4,  5,  6, 7, 8, 9, 10]);
+  });
 });
