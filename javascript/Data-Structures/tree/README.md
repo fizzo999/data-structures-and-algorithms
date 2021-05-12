@@ -13,20 +13,27 @@ pre in and post order we went through in class - addNode and contains I had to r
 
 ### API
 
-addNode() - takes in a value and adds a new node to the tree
-contains() - takes in a value and searches the tree. Returns true if found and false if not found.
-preOrder() - sorts the values in the tree based on data, left, right method and returns an array of all values in the tree.
-inOrder() - sorts the values in the tree based on left, data, right method and returns in order an array of all values in the tree.
-postOrder() - sorts the values in the tree based on left, right, data method and returns an array of all values in the tree.
+- addNode() - takes in a value and adds a new node to the tree
+- contains() - takes in a value and searches the tree. Returns true if found and false if not found.
+
+- findMaxValue() - searches the tree for the maximum value in it.
+
+- preOrder() - sorts the values in the tree based on data, left, right method and returns an array of all values in the tree.
+- inOrder() - sorts the values in the tree based on left, data, right method and returns in order an array of all values in the tree.
+- postOrder() - sorts the values in the tree based on left, right, data method and returns an array of all values in the tree.
+
+- breadthFirstTraversal() - returns an array with the node values sorted in the breadth first traversal method
+  ![breadth first traversal](../../../assets/BreadthTraversal4.png)
 
 ### Testing
 
-Can successfully instantiate an empty tree
-Can successfully instantiate a tree with a single root node
-Can successfully add a left child and right child to a single root node
-Can successfully return a collection from a preorder traversal
-Can successfully return a collection from an inorder traversal
-Can successfully return a collection from a postorder traversal
+- Can successfully instantiate an empty tree
+- Can successfully instantiate a tree with a single root node
+- Can successfully add a left child and right child to a single root node
+- Can successfully return a collection from a preorder traversal
+- Can successfully return a collection from an inorder traversal
+- Can successfully return a collection from a postorder traversal
+- Can successfully return a collection from a breadthFirst traversal
 
 ### UML
 
