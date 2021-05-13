@@ -115,6 +115,24 @@ class BinarySearchTree {
       return results;
     }
   }
+
+  breadthFirstTraversal() {
+    if (!this.root) return;
+    this.queue = [];
+    this.queue.push(this.root);
+    this.output = [];
+    while (this.queue.length) {
+      const node = this.queue.shift();
+      if (node.left) {
+         this.queue.push(node.left);
+      }
+      if (node.right) {
+         this.queue.push(node.right);
+      }
+      this.output.push(node.data);
+    }
+    return this.output;
+   }
 }
 
 module.exports = BinarySearchTree;
