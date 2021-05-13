@@ -230,5 +230,7 @@ $RECYCLE.BIN/
 # my own stuff
 PRIVATE/*
 
+node_modules
+
 
 # End of https://www.gitignore.io/api/node,macos,linux,windows,webstorm,visualstudiocode

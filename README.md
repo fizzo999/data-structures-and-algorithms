@@ -19,6 +19,7 @@
 - Challenge 11: [queue with stacks](javascript/Data-Structures/queueWithStacks)
 - Challenge 12: [fifo animal shelter queue](javascript/code-challenges/fifoAnimalShelter)
 - Challenge 13: [MultiBracketValidation](javascript/code-challenges/multiBracketValidation)
+- Challenge 18: [karyFizzBuzzTreeFunction](javascript/code-challenges/fizzBuzzTree)
 
 ### 301 Code Challenges
 
@@ -52,3 +53,14 @@
 - Challenge 11: [Challenge 11](code-challenges02/)
 - Challenge 12: [Challenge 12](code-challenges02/)
 - Challenge 13: [Challenge 13](code-challenges02/)
+
+- [x] Top-level README “Table of Contents” is updated
+- [x] Feature tasks for this challenge are completed
+- [x] Unit tests written and passing
+  - [x] “Happy Path” - Expected outcome
+  - [x] Expected failure
+  - [x] Edge Case (if applicable/obvious)
+- [x] README for this challenge is complete
+  - [x] Summary, Description, Approach & Efficiency, Solution
+  - [x] Link to code
+  - [x] Picture of whiteboard
