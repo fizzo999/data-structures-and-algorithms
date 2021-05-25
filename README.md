@@ -20,6 +20,7 @@
 - Challenge 12: [fifo animal shelter queue](javascript/code-challenges/fifoAnimalShelter)
 - Challenge 13: [MultiBracketValidation](javascript/code-challenges/multiBracketValidation)
 - Challenge 18: [karyFizzBuzzTreeFunction](javascript/code-challenges/fizzBuzzTree)
+- Challenge 26: [insertionSort](javascript/code-challenges/insertionSort)
 
 ### 301 Code Challenges
 
