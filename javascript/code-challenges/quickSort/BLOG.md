@@ -43,12 +43,22 @@ The power of quick sort comes into play with the partition helper function. This
 
 ## visual walk through
 
+Quicksort uses recursion, divide-and-conquer and comparison-sort. It works by partitioning an array into two sub-arrays and then recursively sorting those arrays independently. To make it clear, let’s put this in 3 main steps:
+
+- Choose the pivot (reference value).
+- Divide the rest of the array in two, placing everything smaller than the pivot on the left and greater than the pivot on the right.
+- Recursively apply the previous steps to the sub-arrays if they have more than 1 element.
+
+In the following chart you can see our example algorithm in action; pivots are green, left arrays are red, and right ones are blue.
+
+![quickSort visual](./quickSort003.png)
+
 ### Sample Arrays
 
 In your blog article, visually show the output of processing this input array:
 
-- [8,4,23,42,16,15]
-- [4,8,15,16,23,42]
+- Input: [6,3,8,4,5,2,9,33,12,64]
+- Output: [2,3,4,5,6,8,9,12,33,64]
 
 For your own understanding, consider also stepping through these inputs:
 
@@ -67,3 +77,5 @@ Time Complexity
 ### Links and Sources
 
 [https://www.educba.com/quick-sort-in-javascript/](https://www.educba.com/quick-sort-in-javascript/)
+
+[https://medium.com/cesars-tech-insights/quicksort-17c5d24e7e5f](https://medium.com/cesars-tech-insights/quicksort-17c5d24e7e5f)
