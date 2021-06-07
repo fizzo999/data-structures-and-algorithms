@@ -92,4 +92,4 @@ Present a complete set of working tests
 * [x] README for this challenge is complete
   - [x] Summary, Description, Approach & Efficiency, Solution
   - [x] Link to code
-  - [ ] Picture of whiteboard
+  - [x] Picture of whiteboard
