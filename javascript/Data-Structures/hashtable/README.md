@@ -43,8 +43,9 @@ Present a complete set of working tests
 
 ## Resources
 
-- [Code Fellows Blog example](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-26/solutions/BLOG)
-- [Geeks for geeks](https://www.geeksforgeeks.org/merge-sort/)
+- [Canvas CF Hashs tables](https://codefellows.github.io/common_curriculum/data_structures_and_algorithms/Code_401/class-30/resources/Hashtables.html)
+- [tutorialspoint](https://www.tutorialspoint.com/Hash-Table-Data-Structure-in-Javascript)
+- [educative](https://www.educative.io/blog/data-strucutres-hash-table-javascript)
 
 * [x] Top-level README “Table of Contents” is updated
 * [x] Feature tasks for this challenge are completed
