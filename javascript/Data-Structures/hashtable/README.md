@@ -26,9 +26,9 @@ adding a linked list at every position of the hash array when we first store dat
 - [Link to test - hashtable.test.js](./__tests__/hashtable.test.js)
 - [Link to PR on github ](./__tests__/hashtable.test.js)
 
-### UML Hashmap
+### UML Hashtable
 
-![uml hashmap](./Hashmap.jpg)
+![uml hashtable](./Hashtable.jpg)
 
 ### Implementation
 
