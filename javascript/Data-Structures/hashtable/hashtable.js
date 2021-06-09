@@ -83,7 +83,8 @@ class Hashmap {
 
       while(thisNode) {
         if(thisNode.val[0] === key) {
-          result.push(`for the key '${key}' we found ${thisNode.val[0]}: ${thisNode.val[1]}`);
+          console.log(`for the key '${key}' we found ${thisNode.val[0]}: ${thisNode.val[1]}`);
+          result.push(`${thisNode.val[0]} : ${thisNode.val[1]}`);
         }
         thisNode = thisNode.next;
       }

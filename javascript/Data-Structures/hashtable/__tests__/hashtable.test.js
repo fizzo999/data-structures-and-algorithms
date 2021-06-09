@@ -22,8 +22,8 @@ describe('=======>>>>>>> Hashmap <<<<<<<=======', () => {
 
   it('should successfully return a value based on a key or a message of \"nothing found for key:\"', () => {
 
-    expect(hashmap.get('michelle')).toEqual(["for the key 'michelle' we found michelle: pannosch"]);
-    expect(hashmap.get('fizzo')).toEqual( ["for the key 'fizzo' we found fizzo: pannosch"]);
+    expect(hashmap.get('michelle')).toEqual(["michelle: pannosch"]);
+    expect(hashmap.get('fizzo')).toEqual( ["fizzo: pannosch"]);
     expect(hashmap.get('john')).toEqual("nothing found for key:john");
   });
 
@@ -37,9 +37,9 @@ describe('=======>>>>>>> Hashmap <<<<<<<=======', () => {
   it('should successfully add a key/value to the hashtable ', () => {
     hashmap.add('anabelle', 'cat');
     expect(hashmap.contains('anabelle')).toEqual(true);
-    expect(hashmap.get('anabelle')).toEqual(["for the key 'anabelle' we found anabelle: cat"]);
+    expect(hashmap.get('anabelle')).toEqual(["anabelle: cat"]);
     hashmap.add('michelle', 'rossee');
     expect(hashmap.contains('michelle')).toEqual(true);
-    expect(hashmap.get('michelle')).toEqual(["for the key 'michelle' we found michelle: rossee", "for the key 'michelle' we found michelle: pannosch"]);
+    expect(hashmap.get('michelle')).toEqual(["michelle: rossee", "michelle: pannosch"]);
   });
 });
