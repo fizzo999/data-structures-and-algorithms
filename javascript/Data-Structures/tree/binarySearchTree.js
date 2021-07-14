@@ -12,14 +12,14 @@ class BinarySearchTree {
     if(!this.root) {
       this.root = newNode;
       return this;
-    } 
+    }
     let current = this.root;
 
     let _addNode = (nodePosition) => {
       if(!current[nodePosition]) {
         current[nodePosition] = newNode;
         return this;
-      } 
+      }
       current = current[nodePosition];
     };
 
@@ -27,10 +27,9 @@ class BinarySearchTree {
       if (value === current.value) {
         return this;
       }
-    if(value < current.value) _addNode('left');
-    else  _addNode('right');
+      if(value < current.value) _addNode('left');
+      else _addNode('right');
     }
-    
   }
 
   contains(value) {
@@ -48,11 +47,11 @@ class BinarySearchTree {
     }
     if (found === false) {
       console.log(`Unable to find ${value} in this tree`);
-      return false; 
+      return false;
     }
     return found;
   }
-  
+
   findMaximumValue() {
     if(!this.root) return 'this tree is empty';
     let maxVal = this.root.value;
@@ -60,7 +59,7 @@ class BinarySearchTree {
       if (node.value > maxVal) maxVal = node.value;
       if (node.left) _walk(node.left);
       if (node.right) _walk(node.right);
-    }
+    };
     _walk(this.root);
     return maxVal;
   }
@@ -73,12 +72,12 @@ class BinarySearchTree {
       return null;
     } else {
       let results = [];
-  
+
       let _walk = node => {
         results.push(node.value);
         if (node.left) _walk(node.left);
         if (node.right) _walk(node.right);
-      }
+      };
       _walk(this.root);
       return results;
     }
@@ -94,7 +93,7 @@ class BinarySearchTree {
         if(node.left) _walk(node.left);
         results.push(node.value);
         if(node.right) _walk(node.right);
-      }
+      };
       _walk(this.root);
       return results;
     }
@@ -110,7 +109,7 @@ class BinarySearchTree {
         if(node.left) _walk(node.left);
         if(node.right) _walk(node.right);
         results.push(node.value);
-      }
+      };
       _walk(this.root);
       return results;
     }
@@ -124,15 +123,15 @@ class BinarySearchTree {
     while (this.queue.length) {
       const node = this.queue.shift();
       if (node.left) {
-         this.queue.push(node.left);
+        this.queue.push(node.left);
       }
       if (node.right) {
-         this.queue.push(node.right);
+        this.queue.push(node.right);
       }
       this.output.push(node.data);
     }
     return this.output;
-   }
+  }
 }
 
 module.exports = BinarySearchTree;

@@ -17,6 +17,8 @@ function joinLeft(hashMapA, hashMapB) {
       right = 'NULL';
     }
     newHashmapArray.push([key, {left, right}]);
+    console.log('WE ARE INSIDE OF leftJoin AND THE left IS =====>>>>>', left);
+    console.log('WE ARE INSIDE OF leftJoin AND THE right IS =====>>>>>', right);
   });
   console.log('WE ARE INSIDE OF leftJoin AND THE ARRAY IS =====>>>>>', newHashmapArray);
   return newHashmapArray;
