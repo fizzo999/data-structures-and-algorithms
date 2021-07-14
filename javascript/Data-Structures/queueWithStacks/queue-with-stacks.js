@@ -32,14 +32,14 @@ class PseudoQueue {
   peek(){
     return this.stack1.peek();
   }
-  
+
   isEmpty(){
-  if(this.stack1.length === 0) return true;
-  return false; 
+    if(this.stack1.length === 0) return true;
+    return false;
   }
 
   toString() {
-    let solution = ''
+    let solution = '';
     if(this.stack1.length === 0) {
       console.log('empty queue');
       return null;
@@ -51,9 +51,9 @@ class PseudoQueue {
         solution = solution + `{${current[counter]}} -> `;
         counter++;
       }
-      solution = solution + ` NULL`
+      solution = solution + ` NULL`;
     }
-    console.log('=============================', solution); 
+    console.log('=============================', solution);
     return solution;
   }
 }

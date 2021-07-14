@@ -23,32 +23,35 @@ class Stack {
       this.length++;
       return this;
     }
-  }  
+  }
+
   pop() {
     // if (this.length === 0) return 'sorry - empty stack';
     if (this.length === 0) return null;
     if (this.length > 1) {
-    let topNodeToBeDeleted = this.top;
-    let tempNode = this.top.next;
-    delete this.top;
-    this.top = tempNode;
-    --this.length;
-    return topNodeToBeDeleted;
+      let topNodeToBeDeleted = this.top;
+      let tempNode = this.top.next;
+      delete this.top;
+      this.top = tempNode;
+      --this.length;
+      return topNodeToBeDeleted;
     } else {
-    let topNodeToBeDeleted = this.top;
-    delete this.top;
-    --this.length;
-    return topNodeToBeDeleted;
+      let topNodeToBeDeleted = this.top;
+      delete this.top;
+      --this.length;
+      return topNodeToBeDeleted;
     }
 
-  }  
+  }
+
   peek() {
     // if(this.length === 0) return 'sorry - empty stack';
     if(this.length === 0) return null;
     let lastIndexNumber = this.length;
     let result = this.top;
     return `This is the last element at index number ${lastIndexNumber - 1}: ${result}`;
-  }  
+  }
+  
   isEmpty() {
     if(this.length === 0) return true;
     return false;
