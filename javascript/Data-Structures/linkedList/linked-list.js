@@ -35,7 +35,7 @@ class LinkedList {
   includes(value) {
     if (!this.head) {
       console.log("empty list");
-      return null;
+      return "empty list";
     } else {
       let current = this.head;
       while (current.next) {
